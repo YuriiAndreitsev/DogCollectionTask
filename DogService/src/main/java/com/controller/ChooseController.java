@@ -29,10 +29,13 @@ public class ChooseController {
 		List<Dog> dogCollection = s.getDogCollection();
 
 		DogCollectionManager manager = new DogCollectionManager();
-		
-		manager.getExtractedDogCollection(dogCollection, breedToUniquelize, uniqueness,
-				priority);
-		
+		if (uniqueness != null && breedToUniquelize == null || breedToUniquelize != null && uniqueness == null) {
+			model.addAttribute("unselectedParameters", "Both Breed to Uniquelize and Breed must be selected!");
+			model.addAttribute("redColor", "#FF0000");
+			return "choosingPrioritiesView";
+		} else {
+			manager.getExtractedDogCollection(dogCollection, breedToUniquelize, uniqueness, priority);
+		}
 		model.addAttribute("dogCollection", dogCollection);
 		return "resultView";
 

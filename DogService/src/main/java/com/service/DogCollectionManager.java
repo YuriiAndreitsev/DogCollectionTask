@@ -15,7 +15,7 @@ public class DogCollectionManager {
 			String priority) {
 
 		Collection<String> breedToUniquelizeCollection = new ArrayList<String>();
-		if (breedToUniquelize.length > 0 && breedToUniquelize != null) {
+		if (breedToUniquelize != null && breedToUniquelize.length > 0) {
 			for (String breedName : breedToUniquelize) {
 				breedToUniquelizeCollection.add(breedName);
 			}
@@ -36,7 +36,7 @@ public class DogCollectionManager {
 
 		Collection<Comparator<Dog>> dogUniquenessComparators = new ArrayList<Comparator<Dog>>();
 
-		if (uniqueness.length > 0 && uniqueness != null) {
+		if (uniqueness != null && uniqueness.length > 0) {
 			for (String uniquenessParam : uniqueness) {
 				dogUniquenessComparators.add(uniquenessComparatorMap.getMap().get(uniquenessParam));
 			}
@@ -49,10 +49,13 @@ public class DogCollectionManager {
 		Collection<Dog> uniqueDogCollection = new TreeSet<Dog>(finalUniquenessComparator);
 		if (breedToUniquelizeCollection.size() > 0) {
 			breedToUniquelizeCollection.stream().forEach(breed -> {
-				dogCollection.stream().filter(dog -> dog.getBreed().equals(breed))
-						.forEach(dog -> uniqueDogCollection.add(dog));
-				dogCollection.stream().filter(dog -> dog.getBreed().equals(breed))
-						.forEach(dog -> toBeRemovedFromInitialDogCollection.add(dog));
+				dogCollection.stream().filter(dog -> dog.getBreed().equals(breed)).forEach(dog -> {
+					uniqueDogCollection.add(dog);
+					toBeRemovedFromInitialDogCollection.add(dog);
+				});
+
+//				dogCollection.stream().filter(dog -> dog.getBreed().equals(breed))
+//						.forEach(dog -> toBeRemovedFromInitialDogCollection.add(dog));
 			});
 
 			dogCollection.removeAll(toBeRemovedFromInitialDogCollection);

@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<div>SELECT DOG PRIORITY AND UNIQUENESS(IF NECESSARY)</div>
 	<form class="dogForm" action='./result.html' method='post'>
 		<div class="divTable" style="width: 1%; border: 1px solid #000;">
@@ -19,13 +20,18 @@
 				<div class="divTableRow">
 					<div class="divTableCell">#&nbsp;</div>
 					<div class="divTableCell">Priority</div>
-					<div class="divTableCell">&nbsp;Uniqueness</div>
+					<div class="divTableCell">Breed To Uniquelize</div>
+					<div class="divTableCell">&nbsp;Uniqueness Params</div>
 				</div>
 				<div class="divTableRow">
 					<div class="divTableCell">&nbsp;1</div>
 					<div class="divTableCell">
 						&nbsp; BREED : <input type="radio" name="priority" value="breed"
 							checked>
+					</div>
+					<div class="divTableCell">
+						Husky <input type="checkbox" name="breedToUniquelize"
+							value="Husky" />
 					</div>
 					<div class="divTableCell">
 						&nbsp;name : <input type="checkbox" name="uniqueness" value="name" />
@@ -37,11 +43,16 @@
 						&nbsp;PRICE : <input type="radio" name="priority" value="price">
 					</div>
 					<div class="divTableCell">
+						Terrier <input type="checkbox" name="breedToUniquelize"
+							value="Terrier" />
+					</div>
+					<div class="divTableCell">
 						&nbsp;age : <input type="checkbox" name="uniqueness" value="age" />
 					</div>
 				</div>
 				<div class="divTableRow">
 					<div class="divTableCell">&nbsp;3</div>
+					<div class="divTableCell"></div>
 					<div class="divTableCell">
 						Chihuahua<input type="checkbox" name="breedToUniquelize"
 							value="Chihuahua" />
@@ -53,6 +64,7 @@
 				</div>
 				<div class="divTableRow">
 					<div class="divTableCell">&nbsp;4</div>
+					<div class="divTableCell"></div>
 					<div class="divTableCell">
 						Bulldog<input type="checkbox" name="breedToUniquelize"
 							value="Bulldog" />
@@ -63,9 +75,10 @@
 				</div>
 				<div class="divTableRow">
 					<div class="divTableCell">&nbsp;5</div>
+					<div class="divTableCell"></div>
 					<div class="divTableCell">
-						Terrier <input type="checkbox" name="breedToUniquelize"
-							value="Terrier" />
+						Retriever<input type="checkbox" name="breedToUniquelize"
+							value="Retriever" />
 					</div>
 					<div class="divTableCell">
 						&nbsp;type : <input type="checkbox" name="uniqueness" value="type" />
@@ -73,10 +86,8 @@
 				</div>
 				<div class="divTableRow">
 					<div class="divTableCell">&nbsp;6</div>
-					<div class="divTableCell">
-						Husky <input type="checkbox" name="breedToUniquelize"
-							value="Husky" />
-					</div>
+					<div class="divTableCell"></div>
+					<div class="divTableCell"></div>
 					<div class="divTableCell">
 						&nbsp;flea : <input type="checkbox" name="uniqueness" value="flea" />
 					</div>
@@ -85,5 +96,11 @@
 		</div>
 		<input type="submit" id="submit" value="accept" />
 	</form>
+
+
+	<c:if test="${unselectedParameters!=null }">
+	<font color="${redColor}">${unselectedParameters }</font>
+	</c:if>
+
 </body>
 </html>

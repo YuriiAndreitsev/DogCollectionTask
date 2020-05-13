@@ -13,10 +13,9 @@
 </head>
 <body>
 
-			<c:forEach var="dog" items="${dogCollection}">
-				${dog}
-				<hr>
-			</c:forEach>
+	<c:forEach var="dog" items="${dogCollection}">
+				${dog}<hr>
+	</c:forEach>
 
 </body>
 </html>
