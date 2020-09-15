@@ -1,6 +1,9 @@
-E:\DogTask\DogService\src\main\java\com\model\Dog.java
-E:\DogTask\DogService\src\main\java\com\TestMain.java
-E:\DogTask\DogService\src\main\java\com\controller\ChooseController.java
-E:\DogTask\DogService\src\main\java\com\service\PriorityComparator.java
-E:\DogTask\DogService\src\main\java\com\service\UniquenessComparatorChain.java
-E:\DogTask\DogService\src\main\java\com\comparators\Comparators.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\service\DogCollectionManager.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\service\UniquenessComparatorChain.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\TestMain.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\dataSource\GeniusDataSourceDataBase.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\service\UniquenessParametersMap.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\controller\ChooseController.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\comparators\Comparators.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\service\PriorityComparator.java
+D:\Git\DogCollectionTask\DogService\src\main\java\com\model\Dog.java

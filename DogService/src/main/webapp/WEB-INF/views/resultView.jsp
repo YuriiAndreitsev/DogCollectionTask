@@ -6,16 +6,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link href="./static/styles/styles.css" rel="stylesheet" type="text/css"
 	media="screen" />
 <meta charset="UTF8">
 <title>Insert title here</title>
 </head>
 <body>
+	<table class="table table-dark">
+		<thead>
+			<tr>
+			  <th scope="col">RESULT</th>
 
-	<c:forEach var="dog" items="${dogCollection}">
-				${dog}<hr>
-	</c:forEach>
-
+			</tr>
+		</thead>
+		<tbody>
+			
+				<c:forEach var="dog" items="${dogCollection}">
+				<tr>
+				<td>	
+					${dog}
+				</td>
+				</tr>
+				</c:forEach>
+			
+		</tbody>
+	</table>
 </body>
 </html>
